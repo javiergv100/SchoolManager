@@ -31,8 +31,6 @@ namespace SchoolManager
                                      .ToList())
                            ).ToList();
 
-                    var dt = dataTableBuilder.BuildDataTable(teachersWithStudents);
-
                     //dotNETSpain2015 Hands-On-Lab
                     excelPackageCreator.CreateAndSaveExcelPackage(dt);
 
