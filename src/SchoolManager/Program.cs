@@ -21,7 +21,7 @@ namespace SchoolManager
             Task.Run(async () =>
                 {
                     var students = await schoolDownloader.GetStudentsAsync();
-                    var teachers = await schoolDownloader.GetTeachersAsync();
+                   
 
                     IList<Tuple<Teacher, IList<Student>>> teachersWithStudents =
                         teachers
@@ -33,6 +33,7 @@ namespace SchoolManager
 
                     var dt = dataTableBuilder.BuildDataTable(teachersWithStudents);
 
+                    //dotNETSpain2015 Hands-On-Lab
                     excelPackageCreator.CreateAndSaveExcelPackage(dt);
 
                 }).Wait();
